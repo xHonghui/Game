@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nft.quizgame">
+    <!-- 此权限用于访问Internet功能 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".application.ApplicationProxy"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/app_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <meta-data
+            android:name="channel"
+            android:value="${CHANNEL}" />
+        <meta-data
+            android:name="store"
+            android:value="${STORE}" />
+        <meta-data
+            android:name="bugly_app_id"
+            android:value="${BUGLY_APP_ID}" />
+        <meta-data
+            android:name="bugly_app_key"
+            android:value="${BUGLY_APP_KEY}" />
+        <meta-data
+            android:name="bugly_channel"
+            android:value="${BUGLY_CHANNEL}" />
+
+        <activity android:name=".TestActivity"/>
+        <activity
+            android:name=".external.ExternalDialogActivity"
+            android:taskAffinity=":ExternalDialogActivity"
+            android:theme="@style/AppCompatTranslucentTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 守护进行SDK start -->
+        <!--
+ 任务服务，必须配置在主常驻进程里
+         com.cs.bd.daemon.JobSchedulerService
+        -->
+        <service
+            android:name="com.cs.bd.daemon.JobSchedulerService"
+            android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <!--
+ 开机自动重启Receiver，进程名称要和被守护的进程一致
+         com.cs.bd.daemon.receiver.BootCompleteReceiver
+        -->
+        <receiver
+            android:name="com.cs.bd.daemon.receiver.BootCompleteReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <!-- 蓝牙状态变化 -->
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <!-- WIFI状态变化 -->
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+            <intent-filter android:priority="999">
+
+                <!-- 网络连接变化 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <!-- 开机广播 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 壁纸变化 -->
+                <action android:name="android.intent.action.WALLPAPER_CHANGED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="99999">
+
+                <!-- "*#*#开头 #*#*结尾"的拨号 -->
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+
+                <data android:scheme="android_secret_code" />
+            </intent-filter>
+            <intent-filter android:priority="99999">
+
+                <!-- 电话呼出 -->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- SD卡挂载、卸载 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver> <!-- 守护进行SDK end -->
+        <!-- 买量SDK start -->
+        <provider
+            android:name="com.cs.bd.buychannel.MPSharedPreferences"
+            android:authorities="${applicationId}.commerce.MPSharedPreferences"
+            android:exported="false" /> <!-- 买量SDK end -->
+        <!-- Commerce Utils start -->
+        <provider
+            android:name="com.cs.bd.commerce.util.io.MultiprocessSharedPreferences"
+            android:authorities="${applicationId}.commerce.multiprocessSharedPreferences"
+            android:exported="false" /> <!-- Commerce Utils end -->
+        <provider
+            android:name=".common.pref.QuizSharedPreferences"
+            android:authorities="${applicationId}.SharedPreferencesProvider"
+            android:exported="true" /> <!-- 穿山甲sdk start -->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/tt_file_paths" />
+        </provider>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" /> <!-- 穿山甲sdk end -->
+        <!-- 广点通 start -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- push start -->
+        <!-- Since JCore2.0.0 Required SDK核心功能-->
+        <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
+        <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
+        <service android:name=".function.push.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+        <receiver
+            android:name=".function.push.PushMessageReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+        <!-- push end -->
+
+        <service android:name="com.nft.quizgame.crash.RestartService"/>
+
+        <!-- AB统计服务 -->
+        <service android:name="com.cpcphone.abtestcenter.statics.SchedulerStaticsService" />
+    </application>
+
+</manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.nft.quizgame.function.quiz.RacingQuizViewModel.TimeProgress" />
+
+        <variable
+            name="timeData"
+            type="androidx.lifecycle.MutableLiveData&lt;TimeProgress>" />
+    </data>
+
+    <com.nft.quizgame.common.view.ShadowLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:sl_shadow_angle="90"
+        app:sl_shadow_color="#7BCCFF"
+        app:sl_shadow_distance="@dimen/sw_6dp"
+        app:sl_shadow_radius="@dimen/sw_24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/sw_198dp"
+            android:layout_height="@dimen/sw_198dp"
+            android:background="@drawable/quiz_circle_bg">
+
+            <com.nft.quizgame.common.view.CircleProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:circleProgress="@{timeData.progress}"
+                app:radius="@dimen/sw_75dp"
+                app:ringColor="#2CDD9B"
+                app:strokeWidth="@dimen/sw_15dp" />
+
+            <com.nft.quizgame.common.view.NumberTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{String.valueOf(timeData.time)}"
+                android:textColor="#35A2FF"
+                android:textSize="@dimen/sw_72sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.nft.quizgame.common.view.ShadowLayout>
+</layout>

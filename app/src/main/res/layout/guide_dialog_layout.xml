@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadeScrollbars="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/guide_title1"
+            android:textColor="#111111"
+            android:textSize="@dimen/sw_80sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/txt_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/sw_19dp"
+            android:text="@string/guide_title2"
+            android:textColor="#272727"
+            android:textSize="@dimen/sw_40sp" />
+
+        <TextView
+            android:id="@+id/txt_content1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/sw_27dp"
+            android:drawableStart="@mipmap/icon_many_coins"
+            android:drawablePadding="@dimen/sw_42dp"
+            android:text="@string/guide_content1_title"
+            android:textColor="#000000"
+            android:textSize="@dimen/sw_50sp" />
+
+        <TextView
+            android:id="@+id/txt_content1_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_69dp"
+            android:layout_marginTop="@dimen/sw_12dp"
+            android:layout_marginEnd="@dimen/sw_69dp"
+            android:text="@string/guide_content1_desc"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/sw_40sp" />
+
+        <TextView
+            android:id="@+id/txt_content2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/sw_56dp"
+            android:drawableStart="@mipmap/icon_earn_more_coins"
+            android:drawablePadding="@dimen/sw_42dp"
+            android:text="@string/guide_content2_title"
+            android:textColor="#000000"
+            android:textSize="@dimen/sw_50sp" />
+
+        <TextView
+            android:id="@+id/txt_content2_desc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_69dp"
+            android:layout_marginTop="@dimen/sw_22dp"
+            android:layout_marginEnd="@dimen/sw_69dp"
+            android:text="@string/guide_content2_desc1"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/sw_40sp" />
+
+        <TextView
+            android:id="@+id/txt_content2_desc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_69dp"
+            android:layout_marginTop="@dimen/sw_46dp"
+            android:layout_marginEnd="@dimen/sw_69dp"
+            android:text="@string/guide_content2_desc2"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/sw_40sp" />
+
+        <TextView
+            android:id="@+id/txt_content2_desc3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_69dp"
+            android:layout_marginTop="@dimen/sw_46dp"
+            android:layout_marginEnd="@dimen/sw_69dp"
+            android:text="@string/guide_content2_desc3"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/sw_40sp" />
+
+        <TextView
+            android:id="@+id/txt_content2_desc4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_69dp"
+            android:layout_marginTop="@dimen/sw_46dp"
+            android:layout_marginEnd="@dimen/sw_69dp"
+            android:text="@string/guide_content2_desc4"
+            android:textColor="#4C4C4C"
+            android:textSize="@dimen/sw_40sp" />
+    </LinearLayout>
+</ScrollView>

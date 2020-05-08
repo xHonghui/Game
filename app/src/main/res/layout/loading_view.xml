@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nft.quizgame.view.LoadingView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3000000"
+    android:visibility="invisible">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="@dimen/sw_300dp"
+        android:layout_height="@dimen/sw_300dp"
+        android:layout_gravity="center"
+        android:background="@drawable/loading_view_bg"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+</com.nft.quizgame.view.LoadingView>

@@ -1,0 +1,506 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "dc4f0a298b886362b34d0a3c5eb2c9ab",
+    "entities": [
+      {
+        "tableName": "user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_user_id` TEXT NOT NULL, `_phone_num` TEXT, `_pay_id` TEXT, `_pay_type` INTEGER NOT NULL, `_user_type` TEXT NOT NULL, `_access_token` TEXT NOT NULL, `_refresh_token` TEXT NOT NULL, PRIMARY KEY(`_user_id`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "_user_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phoneNum",
+            "columnName": "_phone_num",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "payId",
+            "columnName": "_pay_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "payType",
+            "columnName": "_pay_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userType",
+            "columnName": "_user_type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accessToken",
+            "columnName": "_access_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refreshToken",
+            "columnName": "_refresh_token",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_user_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "quiz_item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `_content` TEXT, `_options` TEXT, `_answer` INTEGER, `_ease` INTEGER, `_type` INTEGER NOT NULL, `_is_correct` INTEGER, `_answer_time` INTEGER NOT NULL, PRIMARY KEY(`_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "_content",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "options",
+            "columnName": "_options",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "answer",
+            "columnName": "_answer",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ease",
+            "columnName": "_ease",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCorrect",
+            "columnName": "_is_correct",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "answerTime",
+            "columnName": "_answer_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "quiz_item_tag",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_quiz_item_id` INTEGER NOT NULL, `_tag` INTEGER NOT NULL, PRIMARY KEY(`_quiz_item_id`, `_tag`), FOREIGN KEY(`_quiz_item_id`) REFERENCES `quiz_item`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "quizItemId",
+            "columnName": "_quiz_item_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tag",
+            "columnName": "_tag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_quiz_item_id",
+            "_tag"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "quiz_item",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "_quiz_item_id"
+            ],
+            "referencedColumns": [
+              "_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_cache_key` TEXT NOT NULL, `_cache_content` TEXT NOT NULL, `_cache_time` INTEGER NOT NULL, `_cache_limit` INTEGER NOT NULL, PRIMARY KEY(`_cache_key`))",
+        "fields": [
+          {
+            "fieldPath": "cacheKey",
+            "columnName": "_cache_key",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cacheContent",
+            "columnName": "_cache_content",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cacheTime",
+            "columnName": "_cache_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cacheLimit",
+            "columnName": "_cache_limit",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_cache_key"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "card_property",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_card_type` INTEGER NOT NULL, `_quiz_mode` INTEGER NOT NULL, `_card_amount` INTEGER NOT NULL, `_user_id` TEXT NOT NULL, PRIMARY KEY(`_user_id`, `_card_type`, `_quiz_mode`), FOREIGN KEY(`_user_id`) REFERENCES `user`(`_user_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "cardType",
+            "columnName": "_card_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quizMode",
+            "columnName": "_quiz_mode",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cardAmount",
+            "columnName": "_card_amount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "_user_id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_user_id",
+            "_card_type",
+            "_quiz_mode"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_card_property__user_id",
+            "unique": false,
+            "columnNames": [
+              "_user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_card_property__user_id` ON `${TABLE_NAME}` (`_user_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "user",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "_user_id"
+            ],
+            "referencedColumns": [
+              "_user_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "module_config_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_module_code` INTEGER, `_config` TEXT, `_update_time` INTEGER NOT NULL, PRIMARY KEY(`_module_code`))",
+        "fields": [
+          {
+            "fieldPath": "moduleCode",
+            "columnName": "_module_code",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "configJson",
+            "columnName": "_config",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "updateTime",
+            "columnName": "_update_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_module_code"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rule_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_module_code` INTEGER NOT NULL, `_type` INTEGER NOT NULL, `_rule` TEXT, `_update_time` INTEGER NOT NULL, PRIMARY KEY(`_module_code`))",
+        "fields": [
+          {
+            "fieldPath": "moduleCode",
+            "columnName": "_module_code",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ruleJson",
+            "columnName": "_rule",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "updateTime",
+            "columnName": "_update_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_module_code"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "game_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_user_id` TEXT NOT NULL, `_key` INTEGER NOT NULL, `_value` TEXT, `_update_time` INTEGER NOT NULL, PRIMARY KEY(`_user_id`, `_key`), FOREIGN KEY(`_user_id`) REFERENCES `user`(`_user_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "_user_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "key",
+            "columnName": "_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "_value",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "updateTime",
+            "columnName": "_update_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_user_id",
+            "_key"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "user",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "_user_id"
+            ],
+            "referencedColumns": [
+              "_user_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "coin_order",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_opt_time` INTEGER NOT NULL, `_user_id` TEXT, `_opt_type` INTEGER NOT NULL, `_coin_code` TEXT, `_opt_coin` INTEGER NOT NULL, `_desc` TEXT, `_order_id` TEXT, PRIMARY KEY(`_opt_time`), FOREIGN KEY(`_user_id`) REFERENCES `user`(`_user_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "optTime",
+            "columnName": "_opt_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "_user_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optType",
+            "columnName": "_opt_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coinCode",
+            "columnName": "_coin_code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optCoin",
+            "columnName": "_opt_coin",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desc",
+            "columnName": "_desc",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "orderId",
+            "columnName": "_order_id",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_opt_time"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_coin_order__user_id",
+            "unique": false,
+            "columnNames": [
+              "_user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_coin_order__user_id` ON `${TABLE_NAME}` (`_user_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "user",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "_user_id"
+            ],
+            "referencedColumns": [
+              "_user_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "external_dialog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `_show_count` INTEGER NOT NULL, `_last_show_time` INTEGER NOT NULL, `_click_data` INTEGER NOT NULL, PRIMARY KEY(`_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "showCount",
+            "columnName": "_show_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastShowTime",
+            "columnName": "_last_show_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clickData",
+            "columnName": "_click_data",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc4f0a298b886362b34d0a3c5eb2c9ab')"
+    ]
+  }
+}

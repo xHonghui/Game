@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nft.quizgame.dialog.view.QuizDialogContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/quiz_dialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/quiz_dialog_compose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/sw_71dp"
+            android:layout_height="@dimen/sw_71dp"
+            android:layout_marginEnd="@dimen/sw_108dp"
+            android:layout_marginBottom="@dimen/sw_30dp"
+            android:src="@mipmap/btn_close_gray"
+            app:layout_constraintBottom_toTopOf="@id/img_bg"
+            app:layout_constraintRight_toRightOf="@id/img_bg" />
+
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="@dimen/sw_1080dp"
+            android:layout_height="@dimen/sw_1177dp"
+            android:src="@mipmap/new_user_envelope_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_bonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_480dp"
+            android:layout_marginTop="@dimen/sw_360dp"
+            android:text="8888"
+            android:textColor="#FFB500"
+            android:textSize="@dimen/sw_108dp"
+            app:layout_constraintLeft_toLeftOf="@id/img_bg"
+            app:layout_constraintTop_toTopOf="@id/img_bg" />
+
+        <TextView
+            android:id="@+id/txt_cash_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_37dp"
+            android:text="8888金币=0.88元"
+            android:textColor="#E9651F"
+            android:textSize="@dimen/sw_42sp"
+            app:layout_constraintLeft_toLeftOf="@id/img_bg"
+            app:layout_constraintRight_toRightOf="@id/img_bg"
+            app:layout_constraintTop_toBottomOf="@id/txt_bonus" />
+
+        <ImageView
+            android:id="@+id/btn_get_it"
+            android:layout_width="@dimen/sw_370dp"
+            android:layout_height="@dimen/sw_140dp"
+            android:layout_marginBottom="@dimen/sw_264dp"
+            android:src="@mipmap/btn_get_it"
+            app:layout_constraintBottom_toBottomOf="@id/img_bg"
+            app:layout_constraintLeft_toLeftOf="@id/img_bg"
+            app:layout_constraintRight_toRightOf="@id/img_bg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.nft.quizgame.view.CoinAnimationLayer
+        android:id="@+id/coin_anim_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+</com.nft.quizgame.dialog.view.QuizDialogContainer>

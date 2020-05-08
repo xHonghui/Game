@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.nft.quizgame.function.user.bean.UserBean" />
+
+        <variable
+            name="coinDisplay"
+            type="androidx.lifecycle.MutableLiveData&lt;String>" />
+    </data>
+
+    <com.nft.quizgame.view.CoinPolymericView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quiz_total_coin_bg"
+        android:paddingEnd="@dimen/sw_36dp">
+
+        <ImageView
+            android:id="@+id/img_coin"
+            android:layout_width="@dimen/sw_93dp"
+            android:layout_height="@dimen/sw_93dp"
+            android:src="@mipmap/icon_money_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.nft.quizgame.common.view.NumberTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_12dp"
+            android:text="@{coinDisplay}"
+            android:textColor="#35A2FF"
+            android:textSize="@dimen/sw_48sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/img_coin"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.nft.quizgame.view.CoinPolymericView>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isDoubleCoin"
+            type="androidx.lifecycle.MutableLiveData&lt;Boolean>" />
+
+        <variable
+            name="coinOfQuizItem"
+            type="androidx.lifecycle.MutableLiveData" />
+    </data>
+
+    <com.nft.quizgame.common.view.ShadowLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:sl_shadow_angle="90"
+        app:sl_shadow_color="#7BCCFF"
+        app:sl_shadow_distance="@dimen/sw_6dp"
+        app:sl_shadow_radius="@dimen/sw_24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/sw_198dp"
+            android:layout_height="@dimen/sw_198dp"
+            android:background="@{isDoubleCoin?@drawable/quiz_circle_bg_with_outline:@drawable/quiz_circle_bg}"
+            android:paddingTop="@dimen/sw_18dp"
+            android:paddingLeft="@dimen/sw_18dp"
+            android:paddingRight="@dimen/sw_18dp">
+
+            <ImageView
+                android:id="@+id/img_small_coin"
+                android:layout_width="@dimen/sw_66dp"
+                android:layout_height="@dimen/sw_66dp"
+                android:src="@mipmap/icon_money_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.nft.quizgame.common.view.NumberTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{String.valueOf(coinOfQuizItem)}"
+                android:textColor="#35A2FF"
+                android:textSize="@dimen/sw_72sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.nft.quizgame.common.view.ShadowLayout>
+</layout>

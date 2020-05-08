@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <data>
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.withdraw.WithdrawInfoFillFragment.ActionDelegate" />
+
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <ImageView
+            android:id="@+id/iv_title_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_0dp"
+            android:src="@mipmap/bg_withdraw"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_my_gold"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_150dp"
+
+            android:layout_marginTop="@dimen/sw_72dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/sw_60dp"
+                android:layout_height="@dimen/sw_60dp"
+                android:src="@mipmap/icon_back_white"
+                android:contentDescription="@null"
+                android:onClick="@{()->delegate.backClick()}"
+
+                android:layout_marginStart="@dimen/sw_72dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppTextMedium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sw_51sp"
+                android:text="@string/my_purse"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_my_gold"
+            android:layout_width="@dimen/sw_0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.88"
+            android:paddingTop="@dimen/sw_54dp"
+            android:paddingBottom="@dimen/sw_84dp"
+            android:paddingStart="@dimen/sw_48dp"
+            android:paddingEnd="@dimen/sw_45dp"
+            android:background="@drawable/shape_withdraw_top_bg"
+
+
+            android:layout_marginTop="@dimen/sw_30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_title"
+            >
+
+            <TextView
+                android:id="@+id/tv_withdraw_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppText"
+                android:text="@string/withdraw_explanation"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/sw_48sp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_withdraw_explanation_des_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppTextRegular"
+                android:text="@string/withdraw_explanation_one"
+                android:textColor="#8B8B8B"
+                android:textSize="@dimen/sw_39sp"
+                android:lineSpacingExtra="@dimen/sw_9dp"
+                android:layout_marginTop="@dimen/sw_45dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_withdraw_explanation"
+                />
+
+
+
+            <TextView
+                android:id="@+id/tv_withdraw_explanation_des_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AppTextRegular"
+                android:text="@string/withdraw_explanation_two"
+                android:textColor="#8B8B8B"
+                android:textSize="@dimen/sw_39sp"
+                android:lineSpacingExtra="@dimen/sw_9dp"
+
+                android:layout_marginTop="@dimen/sw_24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_withdraw_explanation_des_one"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_111dp"
+            android:src="@mipmap/bg_withdraw_shadow"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+
+            app:layout_constraintBottom_toBottomOf="@id/iv_title_bg"
+            />
+
+
+
+        <TextView
+            android:id="@+id/tv_withdraw_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppText"
+            android:text="@string/withdraw_to"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="@dimen/sw_48sp"
+
+            android:layout_marginTop="@dimen/sw_90dp"
+            android:layout_marginStart="@dimen/sw_90dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_my_gold"
+            />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/sw_39dp"
+            android:paddingBottom="@dimen/sw_45dp"
+            android:background="@drawable/selector_btn_withdraw_fill_info"
+
+            android:layout_marginTop="@dimen/sw_45dp"
+            android:layout_marginStart="@dimen/sw_90dp"
+            android:layout_marginEnd="@dimen/sw_90dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_withdraw_type">
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sw_42sp"
+                style="@style/AppText"
+                android:textColor="#303030"
+                android:text="@string/account"
+
+                android:layout_marginStart="@dimen/sw_54dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                />
+
+
+
+
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="@dimen/sw_0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="@null"
+                android:hint="@string/please_input_alipay_account_or_phone_number"
+                android:inputType="text"
+                android:maxLength="50"
+                android:background="@null"
+                android:textSize="@dimen/sw_42sp"
+                android:paddingTop="@dimen/sw_15dp"
+                android:paddingBottom="@dimen/sw_15dp"
+                android:textColor="#333333"
+
+                android:layout_marginStart="@dimen/sw_60dp"
+                android:layout_marginEnd="@dimen/sw_30dp"
+                app:layout_constraintLeft_toRightOf="@id/tv_account"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_account_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/sw_39dp"
+            android:paddingBottom="@dimen/sw_45dp"
+            android:background="@drawable/selector_btn_withdraw_fill_info"
+
+            android:layout_marginTop="@dimen/sw_66dp"
+            android:layout_marginStart="@dimen/sw_90dp"
+            android:layout_marginEnd="@dimen/sw_90dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_account">
+
+            <TextView
+                android:id="@+id/tv_account_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sw_42sp"
+                android:textColor="#303030"
+                style="@style/AppText"
+                android:text="@string/name"
+                android:layout_marginStart="@dimen/sw_54dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                />
+
+
+
+
+            <EditText
+                android:id="@+id/et_account_name"
+                android:layout_width="@dimen/sw_0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="@null"
+                android:hint="@string/please_input_alipay_name"
+                android:inputType="text"
+                android:maxLength="50"
+                android:background="@null"
+                android:textSize="@dimen/sw_42sp"
+                android:paddingTop="@dimen/sw_15dp"
+                android:paddingBottom="@dimen/sw_15dp"
+                android:textColor="#333333"
+
+                android:layout_marginStart="@dimen/sw_30dp"
+                android:layout_marginEnd="@dimen/sw_30dp"
+                app:layout_constraintLeft_toRightOf="@id/tv_account_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_withdraw_now"
+            android:layout_width="@dimen/sw_780dp"
+            android:layout_height="@dimen/sw_162dp"
+            style="@style/AppText"
+            android:text="@string/withdraw_now"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sw_48sp"
+            android:background="@drawable/btn_withdraw_now"
+            android:onClick="@{()->delegate.withdrawNow()}"
+
+            android:layout_marginBottom="@dimen/sw_54dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <include
+            android:id="@+id/loading_view"
+            layout="@layout/loading_view_without_bg"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

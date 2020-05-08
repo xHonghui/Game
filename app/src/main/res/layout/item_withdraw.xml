@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    android:layout_marginStart="@dimen/sw_21dp"
+    android:layout_marginEnd="@dimen/sw_21dp"
+    android:layout_marginBottom="@dimen/sw_39dp"
+    android:background="@drawable/selector_withdraw_item">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="20元"
+        android:textColor="@color/selector_color_withdraw"
+        android:textSize="@dimen/sw_48sp"
+       style="@style/AppText"
+
+        android:layout_marginTop="@dimen/sw_15dp"
+        app:layout_constraintBottom_toTopOf="@+id/item_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <TextView
+        android:id="@+id/item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="消耗170000金币"
+        android:textColor="@color/selector_color_withdraw"
+        android:textSize="@dimen/sw_36sp"
+
+        android:layout_marginBottom="@dimen/sw_18dp"
+        android:layout_marginTop="@dimen/sw_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_title" />
+
+
+    <TextView
+        android:id="@+id/item_newuser"
+        android:layout_width="@dimen/sw_135dp"
+        android:layout_height="@dimen/sw_69dp"
+        android:background="@drawable/shape_withdraw_newuser"
+        android:gravity="center"
+        android:text="@string/new_user_exclusive"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/sw_24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

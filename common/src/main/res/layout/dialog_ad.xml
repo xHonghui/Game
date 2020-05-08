@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/fl_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/bg_info_flow_dialog"
+        android:padding="10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/btn_close_white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/fl_ad_container"
+        app:layout_constraintRight_toRightOf="@id/fl_ad_container" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

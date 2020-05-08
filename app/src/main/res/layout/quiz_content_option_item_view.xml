@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="com.nft.quizgame.function.quiz.view.OptionState" />
+
+        <variable
+            name="optionState"
+            type="com.nft.quizgame.function.quiz.view.OptionState" />
+
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.quiz.BaseQuizFragment.BaseActionDelegate" />
+    </data>
+
+    <com.nft.quizgame.common.view.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:optionShadowState="@{optionState.state}"
+        app:sl_shadow_angle="90"
+        app:sl_shadow_color="#C1D8FF"
+        app:sl_shadow_distance="@dimen/sw_6dp"
+        app:sl_shadow_radius="@dimen/sw_24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_132dp"
+            android:padding="@dimen/sw_9dp"
+            android:background="@drawable/quiz_option_bg_normal"
+            android:onClick="@{()->delegate.makeChoiceAnswer(optionState)}"
+            app:optionBgState="@{optionState.state}">
+
+            <!--style="@style/AppText"-->
+            <TextView
+                android:id="@+id/txt_option_text"
+                android:layout_width="@dimen/sw_0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/sw_72dp"
+                android:gravity="center_vertical"
+                android:text="@{optionState.content}"
+                android:textColor="#787878"
+                android:textSize="@dimen/sw_48sp"
+                app:autoSizeMaxTextSize="@dimen/sw_48sp"
+                app:autoSizeMinTextSize="@dimen/sw_24sp"
+                app:autoSizeStepGranularity="@dimen/sw_3sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/img_result"
+                app:optionTextColor="@{optionState.state}" />
+
+
+            <ImageView
+                android:id="@+id/img_result"
+                android:layout_width="@dimen/sw_60dp"
+                android:layout_height="@dimen/sw_60dp"
+                android:layout_marginEnd="@dimen/sw_48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:optionImgState="@{optionState.state}" />
+
+            <ImageView
+                android:id="@+id/img_dummy"
+                android:layout_width="@dimen/sw_39dp"
+                android:layout_height="@dimen/sw_39dp"
+                android:layout_marginEnd="@dimen/sw_30dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/img_result"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.nft.quizgame.common.view.ShadowLayout>
+</layout>

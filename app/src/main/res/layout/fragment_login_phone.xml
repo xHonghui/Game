@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.user.LoginPhoneFragment.ActionDelegate" />
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_690dp"
+            android:src="@mipmap/bg_login_phone"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/sw_60dp"
+            android:layout_height="@dimen/sw_60dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/icon_back_blue"
+            android:onClick="@{()->delegate.back()}"
+
+            android:layout_marginTop="@dimen/sw_87dp"
+            android:layout_marginStart="@dimen/sw_51dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppText"
+            android:text="@string/login_phone_tips_title"
+            android:textSize="@dimen/sw_54sp"
+            android:textColor="#304C79"
+
+            android:layout_marginTop="@dimen/sw_120dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_back"
+            />
+        
+
+
+        
+        <View
+            android:id="@+id/view_bottom_line"
+            android:layout_width="@dimen/sw_0dp"
+            android:layout_height="@dimen/sw_3dp"
+            android:background="#979797"
+            app:layout_constraintWidth_percent="0.68"
+
+
+            android:layout_marginTop="@dimen/sw_267dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            />
+
+
+
+        <TextView
+            android:id="@+id/tv_country_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppTextRegular"
+            android:textSize="@dimen/sw_54sp"
+            android:text="@string/china_phone_number"
+
+            android:layout_marginBottom="@dimen/sw_30dp"
+            app:layout_constraintLeft_toLeftOf="@id/view_bottom_line"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom_line"
+            />
+
+
+
+
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="@null"
+            android:hint="@string/please_input_phone_number"
+            android:inputType="number"
+            android:maxLength="11"
+            android:background="@null"
+            android:textSize="@dimen/sw_54sp"
+            android:paddingTop="@dimen/sw_15dp"
+            android:paddingBottom="@dimen/sw_15dp"
+            android:textColor="#000000"
+            style="@style/AppTextRegular"
+
+            android:layout_marginStart="@dimen/sw_75dp"
+            android:layout_marginBottom="@dimen/sw_18dp"
+            app:layout_constraintLeft_toRightOf="@id/tv_country_number"
+            app:layout_constraintRight_toRightOf="@id/view_bottom_line"
+            app:layout_constraintBottom_toTopOf="@id/view_bottom_line"/>
+
+        <ImageView
+            android:id="@+id/tv_clean"
+            android:layout_width="@dimen/sw_60dp"
+            android:layout_height="@dimen/sw_60dp"
+            android:onClick="@{()->delegate.clearInputNumber()}"
+            android:src="@mipmap/icon_cancel"
+            android:contentDescription="@null"
+
+            app:layout_constraintBottom_toBottomOf="@id/et_phone_number"
+            app:layout_constraintRight_toRightOf="@id/et_phone_number"
+            app:layout_constraintTop_toTopOf="@id/et_phone_number" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="@dimen/sw_720dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_confirm_bg"
+            android:gravity="center"
+            android:onClick="@{()->delegate.login()}"
+            android:paddingTop="@dimen/sw_36dp"
+            android:paddingBottom="@dimen/sw_36dp"
+            android:textColor="@color/white"
+            style="@style/AppText"
+            android:textSize="@dimen/sw_54sp"
+
+            android:layout_marginTop="@dimen/sw_96dp"
+            android:text="@string/login"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_bottom_line" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sw_30dp"
+            style="@style/AppTextRegular"
+            android:textColor="#B6B6B6"
+            android:textSize="@dimen/sw_39sp"
+            android:text="@string/login_phone_tips_des"
+
+            app:layout_constraintTop_toBottomOf="@id/tv_login"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tv_login_alipay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->delegate.alipayLogin()}"
+            android:text="@string/login_alipay"
+            android:drawableTop="@mipmap/icon_alipay_blue"
+            android:drawablePadding="@dimen/sw_36dp"
+            style="@style/AppTextMedium"
+            android:textColor="#82BDFF"
+            android:textSize="@dimen/sw_36sp"
+
+            android:layout_marginBottom="@dimen/sw_93dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_login_tourists"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_login_tourists"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->delegate.touristsLogin()}"
+            android:drawableTop="@mipmap/icon_visitor_blue"
+            android:drawablePadding="@dimen/sw_36dp"
+            style="@style/AppTextMedium"
+            android:textColor="#82BDFF"
+            android:textSize="@dimen/sw_36sp"
+            android:text="@string/login_tourists"
+
+            app:layout_constraintLeft_toRightOf="@id/tv_login_alipay"
+            app:layout_constraintBottom_toBottomOf="@id/tv_login_alipay"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AppText"
+            android:textColor=" #35A2FF"
+            android:textSize="@dimen/sw_48sp"
+            android:text="@string/other_login_method"
+
+            android:layout_marginBottom="@dimen/sw_60dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_login_alipay"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2px"
+            android:background="#84C6FF"
+
+            android:layout_marginEnd="@dimen/sw_33dp"
+            android:layout_marginStart="@dimen/sw_132dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_login_title"
+            app:layout_constraintTop_toTopOf="@id/tv_login_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_login_title"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2px"
+            android:background="#84C6FF"
+
+            android:layout_marginStart="@dimen/sw_33dp"
+            android:layout_marginEnd="@dimen/sw_132dp"
+            app:layout_constraintLeft_toRightOf="@id/tv_login_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_login_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_login_title"
+            />
+
+
+        <include layout="@layout/loading_view_without_bg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

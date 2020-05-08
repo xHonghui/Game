@@ -1,0 +1,219 @@
+<resources>
+<!--    <string name="app_name">欢乐答题红包版</string>-->
+    <string name="app_name">欢乐答题</string>
+    <string name="title_free">自由模式</string>
+    <string name="title_stage">闯关模式</string>
+    <string name="title_racing">竞速模式</string>
+    <string name="stage_details">第%s关</string>
+    <string name="stage_introduction">1. 每答对一题都有随机金币奖励；\n2. 每答对%d道题还有额外红包奖励，内含%d金币；\n3. 答错时闯关失败，观看广告视频后可继续挑战。</string>
+    <string name="racing_introduction">请在%d秒内答对%d题，成功可获得%s金币奖励！每天均有挑战机会哦~</string>
+    <string name="stage_exit_dialog_title_fail">第%d关失败了</string>
+    <string name="stage_exit_dialog_title">第%d关</string>
+    <string name="extra_target_left">还差%d关</string>
+    <string name="cannot_use_tips_card">本题已使用过提示卡</string>
+    <string name="go_on">继续答题</string>
+    <string name="play_next_time">下次再来</string>
+    <string name="stage_exit_dialog_desc">再闯%d关可获得额外%d金币奖励</string>
+    <string name="stage_halfway_exit_dialog_desc">再闯%d关可获得额外%d金币奖励\n确定要退出吗？</string>
+    <string name="reward_ad_load_fail">加载失败，请检查网络后重试</string>
+    <string name="double_bonus_chance">金币翻倍机会</string>
+    <string name="double_bonus_chance_desc">观看一个广告视频即可赢得双倍金币，现在马上观看？</string>
+    <string name="double_bonus_immediately">马上翻倍</string>
+    <string name="give_up">放弃</string>
+    <string name="envelope_dialog_title">当前拥有闯关红包：%d封</string>
+    <string name="envelope_dialog_desc">观看视频可拆红包，现在观看吗？</string>
+    <string name="open_envelope">拆红包</string>
+    <string name="open_envelope_again">再拆一封</string>
+    <string name="open_envelope_success">恭喜获得：%d金币</string>
+    <string name="racing_exit_dialog_title">今日挑战未完成</string>
+    <string name="racing_exit_dialog_desc">完成挑战即可赢得%s金币奖励！是否确认放弃？</string>
+    <string name="challenge_success_title1">今天已挑战成功！</string>
+    <string name="challenge_success_title2">已获得%d金币奖励！</string>
+    <string name="challenge_success_desc">明天记得再来挑战哦~</string>
+    <string name="challenge_fail">挑战失败</string>
+    <string name="challenge_fail_desc">观看广告视频可重新挑战，挑战成功即可赢取%s金币！</string>
+    <string name="know_it">知道了</string>
+    <string name="no_question_dialog_title">题目耗尽</string>
+    <string name="no_question_dialog_desc">真厉害，这个类别下的题目都被你答完了！我们会尽快更新题目，请先玩别的类别吧~</string>
+    <string name="change_card_dialog_title">当前拥有换题卡：%d张</string>
+    <string name="change_card_dialog_desc">是否使用换题卡？</string>
+    <string name="change_card_dialog_desc2">答对%d题可获得1张换题卡，可用于更换一道题目</string>
+    <string name="tips_card_dialog_title">当前拥有提示卡：%d张</string>
+    <string name="tips_card_dialog_desc">是否使用提示卡排除两个错误答案？</string>
+    <string name="tips_card_dialog_desc2">答对%d题可获得1张提示卡，可用于排除两个错误答案</string>
+    <string name="use">使用</string>
+    <string name="dont_use">不使用</string>
+    <string name="change_card">换题卡</string>
+    <string name="tips_card">提示卡</string>
+    <string name="challenge_done">今日已完成</string>
+    <string name="challenge_undone">今日未完成</string>
+
+    <string name="upgrade">升级</string>
+    <string name="skip">跳过</string>
+    <string name="login_alipay">支付宝登录</string>
+    <string name="login_phone">手机号登录</string>
+    <string name="login_tourists">游客登录</string>
+    <string name="please_input_phone_number">请输入手机号</string>
+    <string name="login">登录</string>
+    <string name="verification_code_already_send_symbol">验证码已发送至 %s</string>
+    <string name="please_input_verification_code">请输入验证码</string>
+    <string name="next_get_verification_code_hint_symbol">%d秒后可重新获取验证码</string>
+    <string name="reacquire_verification_code">重新获取验证码</string>
+    <string name="checking">正在校验...</string>
+    <string name="verification_code_not_match">验证码不匹配</string>
+    <string name="get_verification_code_fail">服务器异常，请稍后再试~</string>
+    <string name="get_verification_code_success">获取验证码成功</string>
+    <string name="quiz_red_envelope">欢乐答题红包版</string>
+    <string name="funny_quiz_game">Funny Quiz Game</string>
+    <string name="protocol_statement">进入首页则代表你同意用户协议及隐私协议</string>
+    <string name="user_agreement">用户协议</string>
+    <string name="privacy_agreement">隐私协议</string>
+    <string name="please_login">请登录</string>
+    <string name="login_des">你的满腹经纶，可以在这里变现</string>
+    <string name="input_verification_code">输入验证码</string>
+    <string name="login_phone_tips_title">登录后可使用提现功能</string>
+    <string name="china_phone_number">+86</string>
+    <string name="login_phone_tips_des">未注册手机验证后自动注册</string>
+    <string name="other_login_method">其它登录方式</string>
+    <string name="challenge_again">重新挑战</string>
+    <string name="cash_out">提现</string>
+    <string name="how_to_earn_money">如何赚钱</string>
+    <string name="simple_info">一边涨知识一边赚金币，可以提现到支付宝哦~</string>
+    <string name="cash_out_info">%s提现了%d元现金</string>
+    <string name="end_game_cash_in_desc">游戏结束，获取金币奖励</string>
+    <string name="new_user_bonus_cash_in_desc">新人红包，获取金币奖励</string>
+
+    <string name="my_purse">我的钱包</string>
+    <string name="my_gold">我的金币</string>
+    <string name="gold_convert_money_symbol">金币≈%s元</string>
+    <string name="withdraw_to">提现到</string>
+    <string name="ali_pay">支付宝</string>
+    <string name="withdraw_money">提现金额</string>
+    <string name="arrival_time">到账时间</string>
+    <string name="withdraw_arrival_time_des">到账提现申请在1-7个工作日内审核到账，请耐心等待</string>
+    <string name="withdraw_now">立即提现</string>
+    <string name="new_user_exclusive">新人专享</string>
+
+    <string name="money_symbol">%s元</string>
+    <string name="consume_gold_symbol">消耗%s金币</string>
+    <string name="withdraw_explanation">提现说明</string>
+    <string name="withdraw_explanation_one">1、提现申请提交后，对应现金将在1-7个工作日转入您提交的账号，请耐心等候。</string>
+    <string name="withdraw_explanation_two">2、请确保账号信息填写正确，否则可能导致提现失败或转至他人账号中。</string>
+    <string name="name">姓名</string>
+    <string name="please_input_alipay_name">请输入支付宝账号持有人姓名</string>
+    <string name="please_input_alipay_account_or_phone_number">请输入支付宝账号/手机号码</string>
+    <string name="account">账号</string>
+    <string name="please_input_correct_account">请填写正确的账号信息</string>
+    <string name="account_name_cant_empty">账号姓名不能为空</string>
+    <string name="gold_inadequate_tips">金币还不够哦~</string>
+    <string name="withdraw_success">提现成功</string>
+    <string name="withdraw_success_desc">将在1-7个工作日内转入，请耐心等待</string>
+    <string name="envelope_cash_desc">%d金币≈%s元</string>
+    <string name="earn_money">赚金币</string>
+    <string name="guide_title1">赚钱攻略</string>
+    <string name="guide_title2">金币可提现，轻松赚零花</string>
+    <string name="guide_content1_title">什么是金币？有什么用途</string>
+    <string name="guide_content1_desc">金币是你在使用欢乐答题红包版APP时获得的虚拟货币，可以直接%s提现到支付宝账号</string>
+    <string name="guide_content2_title">如何获得金币？</string>
+    <string name="guide_content2_desc1">1. 每位新用户初次登陆时可获得一封新人红包，随机获得金币</string>
+    <string name="guide_content2_desc2">2. 每天可参加竞速挑战，在限定时间内答对指定题目数即可获得金币奖励（每天限制领一次哦）%1$s</string>
+    <string name="guide_content2_desc3">3. 在自由模式或闯关模式每答对一道题目均可获取金币 %1$s</string>
+    <string name="guide_content2_desc4">4. 在答题过程中有一定的机会得到金币翻倍机会，答对该题目后观看一个免费视频广告即可立即翻倍该题目的奖励</string>
+    <string name="guide_cash_out">兑现人民币</string>
+    <string name="guide_go_to_challenge">去挑战 >></string>
+    <string name="guide_go_to_quiz">去答题 >></string>
+    <string name="close_remind_today">今天关闭提醒</string>
+    <string name="close_remind_recent">近期关闭提醒</string>
+    <string name="external_dialog_make_money_tips">答题涨知识，天天赚红包</string>
+    <string name="withdrawable_to_alipay">可提现至支付宝</string>
+
+    <string name="go_and_see">去看看</string>
+
+    <string name="challenge_undone_title">今日挑战未完成</string>
+    <string name="challenge_undone_content">马上完成今天的答题挑战，赢取%d–%d金币吧~（每天限领一次）</string>
+    <string name="challenge_undone_content_diff">每天限领一次</string>
+    <string name="goto_challenge">去挑战</string>
+
+    <string name="get_through_invite">闯关邀请</string>
+    <string name="get_through_invite_content">你已成功到达第%d关， 快来继续闯关吧~ 每答对一题都有金币奖励，额外还有丰厚闯关红包哦~！</string>
+    <string name="get_through_invite_content_diff_one">金币奖励</string>
+    <string name="get_through_invite_content_diff_two">闯关红包</string>
+    <string name="goto_get_through">去闯关</string>
+
+    <string name="come_answer_question">快来答题</string>
+    <string name="come_answer_question_content">别再把你的聪明才智藏着掖着了，来玩答题游戏吧，你的满腹经纶通通可以变现哦~</string>
+    <string name="goto_answer_question">去答题</string>
+
+    <string name="come_soon_withdraw_title">真的不来提现吗？</string>
+    <!--金币数差额=当前提现最低金币要求-当前金币数-->
+    <string name="come_soon_withdraw_content">你还差%d金币就可以提现￥2元了哦，快来答题吧~ 现金都替你准备好了~！</string>
+    <string name="come_soon_withdraw_content_diff">提现￥2元</string>
+
+    <string name="topic_update_title">题目更新提醒</string>
+    <!--日期取推送当天日期，题目数在500~3950间取随机值-->
+    <string name="topic_update_content">[%s] 我们又更新了%d道题，快来成为第一个答对的人！答对有奖，先到先得哦~！</string>
+
+    <string name="miss_you_title">想你了</string>
+    <!--天数=推送日期-上次打开应用日期（自然日标准）-->
+    <string name="miss_you_content">今天是你没来答题的第%d天，想你......</string>
+
+    <string name="newbie_zone">新手专区</string>
+    <string name="newbie_zone_content">悄悄告诉你这里有个新手专区，题目难度低，90%的人都能答对哦~ 快速赚金币的秘诀就在这了，不要告诉别人~</string>
+    <string name="newbie_zone_content_diff">快速赚金币的秘诀</string>
+    <string name="newbie_zone_content_btn">去赚金币</string>
+
+    <string name="strongest_brain_title">最强大脑集结号</string>
+    <string name="strongest_brain_content">这里有套为最强大脑们准备的高难度题目，要来挑战吗？百万金币，等你来拿！</string>
+    <string name="strongest_brain_content_diff">百万金币，等你来拿！</string>
+
+    <string name="iq_online_title">你的智商还在线吗？</string>
+    <string name="iq_online_content">据说高三是中国人智商的颠峰时期，这些题目今天的你还知道答案吗？</string>
+
+    <string name="reward_increase_title">金币奖励上调通知</string>
+    <!--日期取推送当天日期-->
+    <string name="reward_increase_content">[%s] 金币奖励参数浮动上调，仅限一天，特此通知。</string>
+
+
+    <string name="knowledge_title">你比昨天更博学了吗？</string>
+    <!--人数在10500~89990间取随机值-->
+    <string name="knowledge_content">你的朋友都在偷偷答题涨知识哦，你在干嘛呢？（%d人在线答题中）</string>
+
+    <string name="do_you_know_title">95%的人都答错的题目</string>
+    <string name="do_you_know_content">这里有道题目，95%的人都答错了，不知道你会不会呢？</string>
+
+
+    <string name="rescue_operations_title">救救运营</string>
+    <!--人数在11~29间取随机值-->
+    <string name="rescue_operations_content">老板说今天要达成10万人同时在线答题的小目标，现在还差%d人，你愿意来一起玩么？求求了~~（好人一生平安）</string>
+
+    <string name="take_the_bonus_title">奖金在这</string>
+    <!--人数在205~698间取随机值-->
+    <string name="take_the_bonus_content">你来与不来，奖金就在这里。你不来奖金就被你邻居赢走了哦~（附近%d人正在答题）</string>
+
+    <string name="million_subsidies_title">百万补贴</string>
+    <string name="million_subsidies_content">最新一笔融资到帐，我们又开始疯狂补贴了哦~ 快来答题赢红包，奖金翻倍呢~！</string>
+    <string name="million_subsidies_content_diff">奖金翻倍</string>
+    <string name="test">test</string>
+    <string name="success">success</string>
+    <string name="challenge_finish_tips">今日已完成挑战，请明天再来吧~</string>
+    <string name="refresh_token_expired">用户签名过期，请重新登录</string>
+    <string name="ignore_upgrade">忽略此版本</string>
+    <string name="install_app">安装</string>
+    <string name="main_stage_detail">当前到达%d关</string>
+    <string name="network_error">网络异常</string>
+    <string name="auth_failed">授权失败</string>
+    <string name="test_order_des">测试调用</string>
+
+    <string name="apk_downloading">新版本下载中…</string>
+    <string name="apk_download_finish">版本已下载完成，请点击安装完成升级</string>
+    <string name="txt_close">隐藏</string>
+
+    <string name="error_verification_code_limit">验证码超过发送次数限制，请选择其他方式登录或明天再试~</string>
+    <string name="quiz_make_money">答题赚金币</string>
+    <string name="correct_answer_is">正确答案：</string>
+    <string name="gain_double_bonus">获得%s金币</string>
+
+    <string name="notify_msg">通知消息</string>
+    <string name="operational_activities_msg">运营活动消息</string>
+
+</resources>

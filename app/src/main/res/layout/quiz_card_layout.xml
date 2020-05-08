@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="cardId"
+            type="int" />
+
+        <variable
+            name="cardAmount"
+            type="androidx.lifecycle.MutableLiveData&lt;String>" />
+
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.quiz.BaseQuizFragment.BaseActionDelegate" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->delegate.useCard(cardId)}">
+
+        <ImageView
+            android:id="@+id/img_card"
+            android:layout_width="@dimen/sw_84dp"
+            android:layout_height="@dimen/sw_105dp"
+            app:cardId="@{cardId}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space"
+            android:layout_width="@dimen/sw_0dp"
+            android:layout_height="@dimen/sw_0dp"
+            app:layout_constraintLeft_toRightOf="@id/img_card"
+            app:layout_constraintTop_toTopOf="@id/img_card" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/num_bg"
+            android:gravity="center"
+            android:minWidth="@dimen/sw_42dp"
+            android:minHeight="@dimen/sw_42dp"
+            android:text="@{cardAmount}"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/sw_24sp"
+            android:visibility="@{cardAmount.length()>0 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/space"
+            app:layout_constraintLeft_toRightOf="@id/space"
+            app:layout_constraintRight_toRightOf="@id/space"
+            app:layout_constraintTop_toTopOf="@id/space" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

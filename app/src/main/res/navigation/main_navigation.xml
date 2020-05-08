@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.nft.quizgame.function.splash.SplashFragment"
+        android:label="SplashFragment" />
+
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.nft.quizgame.function.user.LoginFragment"
+        android:label="LoginFragment" />
+
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.nft.quizgame.function.main.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_main_to_free_quiz"
+            app:destination="@id/free_quiz" />
+        <action
+            android:id="@+id/action_main_to_stage_quiz"
+            app:destination="@id/stage_quiz" />
+        <action
+            android:id="@+id/action_main_to_racing_quiz"
+            app:destination="@id/racing_quiz" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/free_quiz"
+        android:name="com.nft.quizgame.function.quiz.FreeQuizFragment"
+        android:label="FreeQuizFragment" />
+
+    <fragment
+        android:id="@+id/login_phone"
+        android:name="com.nft.quizgame.function.user.LoginPhoneFragment"
+        android:label="LoginPhoneFragment" />
+
+    <fragment
+        android:id="@+id/login_phone_verification"
+        android:name="com.nft.quizgame.function.user.LoginPhoneVerificationFragment"
+        android:label="LoginPhoneVerificationFragment" />
+
+    <fragment
+        android:id="@+id/stage_quiz"
+        android:name="com.nft.quizgame.function.quiz.StageQuizFragment"
+        android:label="StageQuizFragment" />
+    <fragment
+        android:id="@+id/racing_quiz"
+        android:name="com.nft.quizgame.function.quiz.RacingQuizFragment"
+        android:label="RacingQuizFragment" />
+
+    <fragment
+        android:id="@+id/withdraw"
+        android:name="com.nft.quizgame.function.withdraw.WithdrawFragment"
+        android:label="WithdrawFragment" />
+
+ <fragment
+        android:id="@+id/withdraw_info_fill"
+        android:name="com.nft.quizgame.function.withdraw.WithdrawInfoFillFragment"
+        android:label="WithdrawInfoFillFragment" />
+
+    <action
+        android:id="@+id/action_to_login"
+        app:destination="@+id/login" />
+
+    <action
+        android:id="@+id/action_splash_to_main"
+        app:destination="@+id/main"
+        app:enterAnim="@anim/fragment_fade_enter" />
+
+    <action
+        android:id="@+id/action_to_login_phone"
+        app:destination="@id/login_phone" />
+    <action
+        android:id="@+id/action_to_login_phone_verification"
+        app:destination="@id/login_phone_verification" />
+
+    <action
+        android:id="@+id/action_to_withdraw"
+        app:destination="@id/withdraw" />
+
+    <action
+        android:id="@+id/action_to_withdraw_info_fill"
+        app:destination="@id/withdraw_info_fill" />
+
+</navigation>

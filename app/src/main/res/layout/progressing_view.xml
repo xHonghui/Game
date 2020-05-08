@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/sw_9dp"
+        android:text="@string/txt_close"
+        android:visibility="visible"
+        android:textColor="#BFBEBE"
+        android:textSize="@dimen/sw_42sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nft.quizgame.common.view.CircleProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawText="true"
+        android:layout_marginTop="@dimen/sw_45dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_hide"
+        app:radius="@dimen/sw_129dp"
+        app:ringColor="#35A2FF"
+        app:strokeWidth="@dimen/sw_15dp"
+        app:textColor="#272727" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sw_90dp"
+        android:text="@string/apk_downloading"
+        android:textColor="#272727"
+        android:textSize="@dimen/sw_54sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

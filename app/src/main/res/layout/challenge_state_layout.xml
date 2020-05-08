@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="raceModeEntrance"
+            type="int" />
+
+        <variable
+            name="isChallengeSuccess"
+            type="Boolean" />
+
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.main.MainFragment.ActionDelegate" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->delegate.toGame(raceModeEntrance)}">
+
+        <ImageView
+            android:id="@+id/img_challenge"
+            android:layout_width="@dimen/sw_240dp"
+            android:layout_height="@dimen/sw_90dp"
+            android:src="@mipmap/challenge_logo"
+            android:scaleType="fitXY"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/sw_75dp"
+            android:background="@drawable/challenge_state_bg"
+            android:paddingStart="@dimen/sw_12dp"
+            app:layout_constraintRight_toRightOf="@id/img_challenge"
+            app:layout_constraintTop_toBottomOf="@id/img_challenge">
+
+            <TextView
+                android:id="@+id/txt_challenge_state"
+                style="@style/AppText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/sw_36dp"
+                android:textSize="@dimen/sw_33sp"
+                app:isChallengeDone="@{isChallengeSuccess}"
+                android:textColor="#A5A5A5"
+                android:text="@string/challenge_undone"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_tick"
+                android:layout_width="@dimen/sw_54dp"
+                android:layout_height="@dimen/sw_54dp"
+                android:layout_marginEnd="@dimen/sw_16dp"
+                android:src="@mipmap/icon_challenge_finished"
+                app:isChallengeDone="@{isChallengeSuccess}"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/txt_challenge_state"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

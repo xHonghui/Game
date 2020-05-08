@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="test_server">false</bool>
+    <!--网络相关 正式服-->
+    <string name="user_host">http://earnact.xuntongwuxian.com</string>
+    <string name="quiz_host">http://pfquiz.xuntongwuxian.com</string>
+    <string name="coin_host">http://coins.xuntongwuxian.com</string>
+    <string name="api_key">EvydmboqA9gVfDOUNI2hxa62</string>
+    <string name="secret_key">mHTi4v7WkIl0JAuauARAJHgd9KimigAm</string>
+    <string name="des_key">PtrD7aNp</string>
+    <!--网络相关 测试服-->
+    <string name="user_host_test">http://searn-state.3g.net.cn</string>
+    <string name="quiz_host_test">http://sfquiz-state.3g.net.cn</string>
+    <string name="coin_host_test">http://scoins-state.3g.net.cn</string>
+    <string name="api_key_test">mzMmEaDXE6okSgVhVE01VOnA</string>
+    <string name="secret_key_test">g9xYPLJmhkOAtZn6sHxV9Sstw4NTHeEw</string>
+    <string name="des_key_test">vT2xY5eZ</string>
+
+    <string name="diff_config_ab_test_cid">517</string><!--go A/B Test CID-->
+    <string name="diff_config_ab_test_prodkey">JF0G7KD3G0RL098OFVC2JN72</string><!--prodKey-->
+    <string name="diff_config_ab_test_accessKey">VV41K8BRVD2LV8GKFFQJKHITSYRQK1J2</string><!--accessKey-->
+    <string name="diff_config_ad_background_data_channel">509</string><!--go 广告后台 Data Channel-->
+    <string name="diff_config_ab_test_host">http://control.xuntongwuxian.com/abtestcenter/cfg</string><!--ab host 待测试是否正确-->
+    <string name="diff_config_commerce_custom_domain">https://xuntongwuxian.com</string><!--go ip地址 -->
+    <integer name="diff_config_statistic_19_product_id">590</integer><!--105和19协议-->
+    <integer name="diff_config_basic_services_id">1853</integer><!--go 基础服务后台id -->
+    <integer name="diff_config_statistic_103_fun_id">2317</integer><!--103功能id-->
+    <integer name="diff_config_statistic_45_fun_id">2315</integer><!--45功能id-->
+    <string name="diff_config_privacy_agreement">https://docs.qq.com/doc/DT2pYdkFKb0FsVXdY</string><!--隐私协议-->
+    <string name="diff_config_user_agreement">https://docs.qq.com/doc/DT1dXR2xVb2RpVXNp</string><!--用户协议-->
+    <string name="base_cfg_version_domain">https://version.xuntongwuxian.com</string><!--app升级配置请求域名-->
+    <string name="diff_statistics_host">topdata.xuntongwuxian.com</string><!--统计sdk域名-->
+    <string name="diff_buychannel_cid">609</string>
+    <string name="diff_buychannel_product_key">JF0G7KD3G0RL098OFVC2JN72</string>
+    <string name="diff_buychannel_access_key">VV41K8BRVD2LV8GKFFQJKHITSYRQK1J2</string>
+    <!-- 广告ID -->
+    <integer name="diff_splash_ad_module_id">9723</integer>
+    <integer name="diff_quiz_bottom_ad_module_id">9725</integer>
+    <integer name="diff_dialog_bottom_ad_module_id">9727</integer>
+    <integer name="diff_double_bonus_reward_ad_module_id">9729</integer>
+    <integer name="diff_envelope_reward_ad_module_id">9731</integer>
+    <integer name="diff_go_on_stage_reward_ad_module_id">9733</integer>
+    <integer name="diff_challenge_reward_ad_module_id">9735</integer>
+    <integer name="diff_exit_quiz_ad_module_id">9737</integer>
+    <integer name="diff_store_reward_ad_module_id">382015</integer>
+</resources>

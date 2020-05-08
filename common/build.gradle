@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion var.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$var.coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$var.coroutinesVersion"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.core:core-ktx:1.2.0'
+    api 'androidx.fragment:fragment-ktx:1.2.3'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // liveData
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$var.lifecycleVersion"
+
+    // viewModel
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$var.lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-extensions:$var.lifecycleVersion"
+
+    // navigation
+    api "androidx.navigation:navigation-fragment-ktx:$var.navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$var.navigationVersion"
+
+    // room
+    api "androidx.room:room-runtime:$var.roomVersion"
+    kapt "androidx.room:room-compiler:$var.roomVersion"
+
+    // For Kotlin use kapt instead of annotationProcessor
+    api "androidx.room:room-ktx:$var.roomVersion"
+
+    // work manager
+    api "androidx.work:work-runtime:$var.workVersion"
+
+    // work manager Kotlin + coroutines
+    api "androidx.work:work-runtime-ktx:$var.workVersion"
+    api "com.github.bumptech.glide:glide:$var.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$var.glideVersion"
+    api 'com.android.volley:volley:1.1.1'
+    api 'com.google.code.gson:gson:2.8.6'
+    api 'com.tencent.bugly:crashreport:3.2.1'
+    api 'com.tencent.bugly:nativecrashreport:3.7.1'
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.squareup.okhttp3:okhttp:3.12.1'
+    api 'com.airbnb.android:lottie:2.7.0'
+    api 'com.liulishuo.filedownloader:library:1.7.6'
+    //==================START: GOMO SDK==================
+    api name: "statistics-cn-release-v1.04", ext: "aar"
+    api name: "BuyChannelSdk-trunk-v1.6-r190545-AF-4.10.1", ext: "aar"
+    api name: "ProcessDaemonSdk-trunk-v1.7-r193940", ext: "aar"
+    api name: "CommerceAdSdk-V4.13.1-release-svn207409", ext: "aar"
+    api 'com.gomo.commons:gomo-security-sdk:1.0.0.RELEASE'
+    api 'com.base.http:http:1.0.8'
+    //==================END: GOMO SDK==================
+
+    //==================START: 广告 SDK==================
+    //穿山甲sdk
+    api(name: 'open_ad_sdk_2.9.5.5', ext: 'aar')
+    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.18'
+    //广点通sdk
+    api(name: 'GDTSDK.unionNormal.4.172.1042', ext: 'aar')
+    //==================END: 广告 SDK==================
+
+
+    //==================START:版本更新==================
+    //此版本需要加密密钥，详情请看 微服务SDK接入说明
+    api(name: 'services-version-release', ext: 'aar')
+    api(name: 'microservicesbase-release', ext: 'aar')
+//    api 'com.base.services:version:1.0.4'
+    //服务器http库，若别的SDK有用到此库，保持最新的版本即可
+    api 'com.base.http:http:1.0.8'
+    //==================END:版本更新==================
+
+}

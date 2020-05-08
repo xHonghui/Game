@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="retry">重试</string>
+    <string name="go_it">知道了</string>
+    <string name="network_error_title">无网络</string>
+    <string name="network_error_desc">当前无网络，请检查设备网络设置~</string>
+    <string name="unknown_error_title">未知错误</string>
+    <string name="unknown_error_desc">遇到未知错误，请稍后重试~</string>
+    <string name="withdraw_inventory_shortage">今天提现太火爆啦，已经达到支付宝单天的转账上限，明天早点来哦~！</string>
+    <string name="withdraw_frequency_limit">每天只能提现一次哦~明天再来吧~</string>
+    <string name="withdraw_fail">提现失败</string>
+    <string name="coin_convert_money_symbol">%d金币≈%s元</string>
+    <string name="data_init_error_title">初始化失败</string>
+    <string name="data_init_error_desc">应用初始化失败，请检查网络设置后重试~</string>
+</resources>

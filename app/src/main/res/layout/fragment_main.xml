@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="freeModeEntrance"
+            type="int" />
+
+        <variable
+            name="stageModeEntrance"
+            type="int" />
+
+        <variable
+            name="delegate"
+            type="com.nft.quizgame.function.main.MainFragment.ActionDelegate" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/main_bg"
+            android:paddingStart="@dimen/sw_63dp"
+            android:paddingTop="@dimen/sw_102dp"
+            android:paddingEnd="@dimen/sw_63dp">
+
+            <include
+                android:id="@+id/total_coin_cash_out"
+                layout="@layout/total_coin_cash_out_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/challenge_state"
+                layout="@layout/challenge_state_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_how_to_earn_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_27dp"
+                android:drawableLeft="@mipmap/icon_question"
+                android:drawablePadding="@dimen/sw_6dp"
+                android:onClick="@{()->delegate.openGuideDialog()}"
+                android:text="@string/how_to_earn_money"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/sw_33sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/challenge_state" />
+
+            <com.nft.quizgame.common.view.VerticalTextView
+                android:id="@+id/txt_cash_out_info"
+                style="@style/AppText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sw_14dp"
+                android:minHeight="@dimen/sw_36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/txt_how_to_earn_money"
+                app:layout_constraintTop_toTopOf="@id/txt_how_to_earn_money" />
+
+            <TextView
+                android:id="@+id/txt_simple_info"
+                style="@style/AppText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sw_72dp"
+                android:layout_marginStart="@dimen/sw_14dp"
+                android:layout_marginTop="@dimen/sw_25dp"
+                android:layout_marginEnd="@dimen/sw_14dp"
+                android:background="@drawable/simple_info_bg"
+                android:drawableLeft="@mipmap/icon_inform"
+                android:drawablePadding="@dimen/sw_29dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/sw_30dp"
+                android:paddingEnd="@dimen/sw_30dp"
+                android:text="@string/simple_info"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/sw_33sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_cash_out_info" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/sw_37dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_simple_info">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/entrance_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/sw_60dp">
+
+                    <ImageView
+                        android:id="@+id/img_entrance_free"
+                        android:layout_width="@dimen/sw_454dp"
+                        android:layout_height="@dimen/sw_557dp"
+                        android:layout_gravity="bottom"
+                        android:onClick="@{()->delegate.toGame(freeModeEntrance)}"
+                        android:src="@mipmap/entrance_free"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="@dimen/sw_454dp"
+                        android:layout_height="@dimen/sw_557dp"
+                        android:layout_gravity="bottom"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_entrance_stage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:onClick="@{()->delegate.toGame(stageModeEntrance)}"
+                            android:src="@mipmap/entrance_stage"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_stage_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/sw_38dp"
+                            android:layout_marginStart="@dimen/sw_233dp"
+                            android:layout_marginBottom="@dimen/sw_145dp"
+                            android:background="@drawable/stage_detail_bg"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/sw_18dp"
+                            android:paddingEnd="@dimen/sw_18dp"
+                            android:text="@string/main_stage_detail"
+                            android:textColor="#F99D55"
+                            android:textSize="@dimen/sw_24sp"
+                            app:layout_constraintBottom_toBottomOf="@id/img_entrance_stage"
+                            app:layout_constraintLeft_toLeftOf="@id/img_entrance_stage" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <ImageView
+                        android:id="@+id/img_entrance_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_175dp"
+                        android:layout_marginTop="@dimen/sw_55dp"
+                        android:background="@drawable/disease_bg"
+                        android:onClick="@{()->delegate.toGame(4)}"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/disease_text"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_entrance_free" />
+
+                    <ImageView
+                        android:id="@+id/img_entrance_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_270dp"
+                        android:layout_marginTop="@dimen/sw_53dp"
+                        android:background="@drawable/newbie_bg"
+                        android:onClick="@{()->delegate.toGame(5)}"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/newbie_text"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_entrance_1" />
+
+                    <ImageView
+                        android:id="@+id/img_entrance_3"
+                        android:layout_width="@dimen/sw_452dp"
+                        android:layout_height="@dimen/sw_375dp"
+                        android:layout_marginTop="@dimen/sw_53dp"
+                        android:background="@drawable/entertainment_bg"
+                        android:onClick="@{()->delegate.toGame(8)}"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/entertainment_text"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_entrance_2" />
+
+                    <ImageView
+                        android:id="@+id/img_entrance_4"
+                        android:layout_width="@dimen/sw_452dp"
+                        android:layout_height="@dimen/sw_160dp"
+                        android:background="@drawable/brain_bg"
+                        android:onClick="@{()->delegate.toGame(6)}"
+                        android:scaleType="fitEnd"
+                        android:layout_marginTop="@dimen/sw_54dp"
+                        android:src="@drawable/brain_text"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_entrance_5" />
+
+                    <ImageView
+                        android:id="@+id/img_entrance_5"
+                        android:layout_width="@dimen/sw_452dp"
+                        android:layout_height="@dimen/sw_160dp"
+                        android:background="@drawable/sports_bg"
+                        android:onClick="@{()->delegate.toGame(7)}"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/sports_text"
+                        app:layout_constraintTop_toTopOf="@id/img_entrance_3"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <TextView
+                android:id="@+id/tv_test"
+                style="@style/AppText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sw_30dp"
+                android:onClick="@{()->delegate.test()}"
+                android:text="@string/test"
+                android:textColor="#35A2FF"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/loading_view"
+            layout="@layout/loading_view_without_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

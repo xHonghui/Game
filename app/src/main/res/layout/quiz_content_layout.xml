@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isDoubleCoin"
+            type="androidx.lifecycle.MutableLiveData&lt;Boolean>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <FrameLayout
+            android:id="@+id/quiz_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{isDoubleCoin?@drawable/quiz_item_bg_with_outline:@drawable/quiz_item_bg}"
+            android:minHeight="@dimen/sw_1101dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:id="@+id/space_1ink"
+            android:layout_width="@dimen/sw_0dp"
+            android:layout_height="@dimen/sw_0dp"
+            android:layout_marginTop="@dimen/sw_84dp"
+            app:layout_constraintLeft_toLeftOf="@id/quiz_content_container"
+            app:layout_constraintTop_toBottomOf="@id/quiz_content_container" />
+
+        <FrameLayout
+            android:id="@+id/fl_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_78dp"
+            android:background="@drawable/quiz_item_bg"
+            android:minHeight="@dimen/sw_324dp"
+            android:padding="@dimen/sw_30dp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@id/link"
+            app:layout_constraintTop_toTopOf="@id/link" />
+
+        <ImageView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_100dp"
+            android:src="@mipmap/link"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/space_1ink"
+            app:layout_constraintLeft_toLeftOf="@id/space_1ink" />
+
+        <Space
+            android:id="@+id/space_double_mark"
+            android:layout_width="@dimen/sw_0dp"
+            android:layout_height="@dimen/sw_0dp"
+            android:layout_marginStart="@dimen/sw_12dp"
+            android:layout_marginBottom="@dimen/sw_42dp"
+            app:layout_constraintBottom_toTopOf="@id/quiz_content_container"
+            app:layout_constraintLeft_toRightOf="@id/quiz_content_container" />
+
+        <ImageView
+            android:layout_width="@dimen/sw_228dp"
+            android:layout_height="@dimen/sw_138dp"
+            android:src="@mipmap/double_mark"
+            android:visibility="@{isDoubleCoin? View.VISIBLE : View.GONE}"
+            app:layout_constraintRight_toRightOf="@id/space_double_mark"
+            app:layout_constraintTop_toTopOf="@id/space_double_mark" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

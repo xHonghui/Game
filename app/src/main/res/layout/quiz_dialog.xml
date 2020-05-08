@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nft.quizgame.dialog.view.QuizDialogContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/quiz_dialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <FrameLayout
+        android:id="@+id/dialog_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/sw_108dp"
+        android:layout_marginEnd="@dimen/sw_108dp"
+        android:clipChildren="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quiz_dialog_compose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false">
+
+            <ImageView
+                android:id="@+id/btn_close"
+                android:layout_width="@dimen/sw_77dp"
+                android:layout_height="@dimen/sw_77dp"
+                android:layout_marginEnd="@dimen/sw_28dp"
+                android:src="@mipmap/btn_close_white"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="@id/content_layout"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/logo_bg_space"
+                android:layout_width="@dimen/sw_3dp"
+                android:layout_height="@dimen/sw_3dp"
+                android:layout_marginTop="@dimen/sw_78dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_logo_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sw_60dp"
+                android:src="@mipmap/dialog_logo_light_bg"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/logo_bg_space"
+                app:layout_constraintLeft_toLeftOf="@id/content_layout"
+                app:layout_constraintRight_toRightOf="@id/content_layout"
+                app:layout_constraintTop_toTopOf="@+id/logo_bg_space" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_28dp"
+                android:background="@drawable/quiz_dialog_bg"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/sw_60dp"
+                android:paddingRight="@dimen/sw_60dp"
+                android:paddingBottom="@dimen/sw_60dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_close">
+
+                <androidx.legacy.widget.Space
+                    android:id="@+id/logo_space"
+                    android:layout_width="@dimen/sw_3dp"
+                    android:layout_height="@dimen/sw_3dp"
+                    android:layout_marginTop="@dimen/sw_135dp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/img_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/logo_space"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+                <FrameLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_logo">
+
+                    <ViewStub
+                        android:id="@+id/custom_layout_stub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inflatedId="@+id/custom_layout_container"
+                        android:layout="@layout/quiz_dialog_custom_container"
+                        android:visibility="gone" />
+
+                    <ViewStub
+                        android:id="@+id/default_layout_stub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inflatedId="@+id/default_layout_container"
+                        android:layout="@layout/quiz_dialog_default_container"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+
+                <com.nft.quizgame.common.view.ShadowLayout
+                    android:id="@+id/sl_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_36dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/sl_cancel"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/content"
+                    app:sl_shadow_angle="90"
+                    app:sl_shadow_color="#C1D8FF"
+                    app:sl_shadow_distance="@dimen/sw_6dp"
+                    app:sl_shadow_radius="@dimen/sw_24dp">
+
+                    <TextView
+                        android:id="@+id/btn_ok"
+                        style="@style/AppText"
+                        android:layout_width="@dimen/sw_600dp"
+                        android:layout_height="@dimen/sw_132dp"
+                        android:background="@drawable/btn_confirm_bg"
+                        android:gravity="center"
+                        android:text="@string/challenge_again"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/sw_42sp" />
+
+                </com.nft.quizgame.common.view.ShadowLayout>
+
+                <com.nft.quizgame.common.view.ShadowLayout
+                    android:id="@+id/sl_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_6dp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sl_ok"
+                    app:sl_shadow_angle="90"
+                    app:sl_shadow_color="#C1D8FF"
+                    app:sl_shadow_distance="@dimen/sw_6dp"
+                    app:sl_shadow_radius="@dimen/sw_24dp">
+
+                    <TextView
+                        android:id="@+id/btn_cancel"
+                        android:fontFamily="sans-serif"
+                        android:layout_width="@dimen/sw_600dp"
+                        android:layout_height="@dimen/sw_132dp"
+                        android:background="@drawable/btn_cancel_bg"
+                        android:gravity="center"
+                        android:text="@string/give_up"
+                        android:textColor="#6BBAFF"
+                        android:textSize="@dimen/sw_42sp" />
+                </com.nft.quizgame.common.view.ShadowLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:id="@+id/space_1ink"
+                android:layout_width="@dimen/sw_3dp"
+                android:layout_height="@dimen/sw_3dp"
+                android:layout_marginBottom="@dimen/sw_27dp"
+                app:layout_constraintBottom_toBottomOf="@id/content_layout"
+                app:layout_constraintLeft_toLeftOf="@id/content_layout"
+                app:layout_constraintRight_toRightOf="@id/content_layout" />
+
+            <FrameLayout
+                android:id="@+id/fl_ad_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_51dp"
+                android:background="@drawable/quiz_dialog_bg"
+                android:minHeight="@dimen/sw_324dp"
+                android:padding="@dimen/sw_30dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/content_layout" />
+
+            <ImageView
+                android:id="@+id/link"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sw_100dp"
+                android:src="@mipmap/link"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/space_1ink"
+                app:layout_constraintTop_toTopOf="@id/space_1ink" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <include
+        layout="@layout/loading_view_without_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.nft.quizgame.view.CoinAnimationLayer
+        android:id="@+id/coin_anim_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+</com.nft.quizgame.dialog.view.QuizDialogContainer>
